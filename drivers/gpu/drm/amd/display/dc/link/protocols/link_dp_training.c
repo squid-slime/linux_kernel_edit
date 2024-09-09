@@ -53,7 +53,12 @@
 
 #define POST_LT_ADJ_REQ_LIMIT 6
 #define POST_LT_ADJ_REQ_TIMEOUT 200
-#define LINK_TRAINING_RETRY_DELAY 50 /* ms */
+#include <linux/module.h>
+
+static int link_training_retry_delay = 50;  // Default value 100
+module_param(link_training_retry_delay, int, 0644);
+MODULE_PARM_DESC(link_training_retry_delay, "Delay between link training retries (ms)");
+
 
 void dp_log_training_result(
 	struct dc_link *link,
