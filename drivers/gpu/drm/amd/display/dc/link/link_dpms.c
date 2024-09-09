@@ -72,7 +72,7 @@
 
 #define MAX_MTP_SLOT_COUNT 64
 #include <linux/module.h>
-static int link_training_attempts = 5;
+static int link_training_attempts = 4;
 module_param(link_training_attempts, int, 0644);
 MODULE_PARM_DESC(link_training_attempts, "Number of link training attempts");
 #define LINK_TRAINING_ATTEMPTS link_training_attempts
